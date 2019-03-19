@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Librairie</string>
+    <string name="input_email">email</string>
+    <string name="input_password">password</string>
+    <string name="button_login">Login</string>
+    <string name="title_list_activity">Liste des livres</string>
+</resources>

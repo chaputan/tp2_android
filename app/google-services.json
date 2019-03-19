@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "444931776675",
+    "firebase_url": "https://livres-1e305.firebaseio.com",
+    "project_id": "livres-1e305",
+    "storage_bucket": "livres-1e305.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:444931776675:android:5a2524da51858815",
+        "android_client_info": {
+          "package_name": "com.polytech.librairie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "444931776675-1qcmqbbb2jqunjvqcsn32d8tb19jofln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUZEcMfS7uTnGTWcH2j4ZTuL2fOMqX36U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
