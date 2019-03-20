@@ -34,26 +34,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String email, password;
         email = Objects.requireNonNull(((TextInputLayout) findViewById(R.id.input_email)).getEditText()).getText().toString();
         password = Objects.requireNonNull(((TextInputLayout) findViewById(R.id.input_password)).getEditText()).getText().toString();
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    private static final String TAG = "MY APP";
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success");
-                            Toast.makeText(MainActivity.this, "Authentication success.",
-                                    Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(MainActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+        if(email.isEmpty()){
+            Toast.makeText(MainActivity.this, "L'Email est vide.",
+                    Toast.LENGTH_SHORT).show();
+        } else if(password.isEmpty()){
+            Toast.makeText(MainActivity.this, "Le mot de passe est vide.",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        private static final String TAG = "MY APP";
+
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                Toast.makeText(MainActivity.this, "Authentication success.",
+                                        Toast.LENGTH_SHORT).show();
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                updateUI(user);
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Toast.makeText(MainActivity.this, "Mauvais login/mot de passe.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(null);
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
     private void updateUI(FirebaseUser user){

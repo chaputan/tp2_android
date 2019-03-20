@@ -4,4 +4,5 @@
     <string name="input_password">password</string>
     <string name="button_login">Login</string>
     <string name="title_list_activity">Liste des livres</string>
+    <string name="item_book">Livre</string>
 </resources>
